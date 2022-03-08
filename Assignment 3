@@ -1,0 +1,26 @@
+create table emp2(empno number(8) primary key check(empno>=7000 AND empno<=8000),ename varchar2(20),job varchar2(20),mgr number(10),hiredate date,sal number(20),comm number(10) default 0 check(comm<=1500),dept_name varchar2(20));
+
+insert into EMP2 values(7369,'Smith','Clerk',7902,'17-DEC-80',800,0,'HR');
+insert into EMP2 values(7499,'Allen','Salesman',7698,'20-FEB-81',1600,600,'Sales');
+insert into EMP2 values(7521,'Ward','Salesman',7698,'22-FEB-81',1250,250,'Sales');
+insert into EMP2 values(7566,'Jones','Manager',7839,'02-APR-81',2975,0,'Executive');
+insert into EMP2 values(7654,'Martin','Salesman',7698,'28-SEP-81',1250,250,'Sales');
+insert into EMP2 values(7698,'Blake','Manager',7839,'01-MAY-81',2850,0,'Executive');
+insert into EMP2 values(7782,'Clark','Manager',7839,'09-JUN-81',2450,0,'Executive');
+insert into EMP2 values(7788,'Scott','Analyst',7566,'09-DEC-82',3000,0,'HR');
+insert into EMP2 values(7839,'King','President',NULL,'17-NOV-81',5000,0,'Executive');
+insert into EMP2 values(7844,'Turner','Salesman',7698,'08-SEP-81',1500,500,'Sales');
+
+SELECT ENAME FROM EMP2 WHERE JOB NOT LIKE 'Manager';
+SELECT  ENAME FROM EMP2 WHERE ENAME LIKE '-i';
+SELECT COUNT(ENAME) "TOTAL_NO_OF_MANAGER" FROM EMP2 WHERE JOB LIKE 'Manager';
+SELECT MAX(SAL) "MAXIMUM",MIN(SAL) "MINIMUM",AVG(SAL) "AVERAGE" FROM EMP2;
+SELECT JOB,MAX(SAL) "MAXIMUM",MIN(SAL) "MINIMUM",AVG(SAL) "AVERAGE" FROM EMP2 GROUP BY JOB;
+SELECT * FROM EMP2 where HIREDATE>'01-JAN-1980';
+SELECT ENAME FROM EMP2 WHERE JOB LIKE 'Salesman' AND SAL=(SELECT MAX(SAL) FROM EMP WHERE JOB LIKE 'Salesman');
+SELECT ENAME FROM EMP2 WHERE JOB LIKE 'Clerk' AND SAL=(SELECT MIN(SAL) FROM EMP WHERE JOB LIKE 'Clerk');
+SELECT ENAME FROM EMP2 WHERE SAL>(SELECT SAL FROM EMP WHERE ENAME LIKE 'Turner');
+SELECT JOB FROM EMP2 WHERE ENAME LIKE 'Ford';
+SELECT JOB FROM EMP2 WHERE SAL=(SELECT MAX(SAL) FROM EMP);
+
+
