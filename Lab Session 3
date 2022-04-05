@@ -1,0 +1,16 @@
+1.update PRODUCT_MASTER SET REORDERLVL = 80 where DESCRIPTION = 'shirts';
+2.update product_master set sellprice = sellprice*1.1;
+3.update salesman_master set ytdsales = 35 where salesmanno = 'S00003';
+4.update sales_order_details set qtydisp = qtyordered where productrate<=1000;
+5.update client_master set pincode = 400001 where city = 'Mumbai';
+6.update product_master set reorderlvl = reorderlvl*2;
+7.delete from sales_order_details where orderno in(select orderno from sales_order where orderstatus like 'cancelled');
+  delete from sales_order where orderstatus like 'cancelled';
+8.
+9. select productno from product_master where qtyinhand<reorderlvl;
+10.update emp set mgr = 7698 where ename = 'Smith';
+   update emp set mgr = 7698 where ename = 'Adams'; 
+                      OR
+   update emp set mgr= (select empno from emp where ename like 'Blake') where ename in ('Smith','Adams');
+   
+   
