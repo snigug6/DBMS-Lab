@@ -1,0 +1,16 @@
+create table Customers (CustomerID number primary key,CustomerName varchar2(20),ContactName varchar2(20),Address varchar2(50),City varchar2(20),PostalCode number,Country varchar2(20));
+create table Suppliers (SupplierID number primary key,SupplierName varchar2(50),ContactName varchar2(50),Address varchar2(50),City varchar2(20),PostalCode number,Country varchar2(20));
+
+insert into customers values(1,'Alfreds Futter','Maria Anders','Obere Str.57','Berlin',12209,'Germany');
+insert into customers values(2,'Ana helados','Ana Trujillo','Avda Construction 2222','Mexico D.F',05021,'Mexico');
+insert into customers values(3,'Antonio Moreno','Antonio Moreno','Mataderos 2312','Mexico D.F',05023,'Mexico');
+
+insert into suppliers values(1,'Exotic Liquid','Charlotte Cooper','49 Gilbert St.','Berlin',12209,'Germany');
+insert into suppliers values(2,'New Orleans Cajun Delights','Shelly Burke','P.O. Box 78934','Mexico D.F',05023,'Mexico');
+insert into suppliers values(3,'Grandma Kellys homestead','Regina Murphy','707 Oxford Rd.','Ann Arbor',48104,'USA');
+
+1.SELECT city FROM customers UNION SELECT city FROM suppliers;
+2.SELECT City FROM Customers UNION ALL SELECT City FROM Suppliers;
+3.SELECT City, Country FROM Customers WHERE Country='Germany' UNION ALL SELECT City, Country FROM Suppliers WHERE Country='Germany';
+4.
+5.
