@@ -41,8 +41,9 @@ insert into ORDERS values(910,121 ,'23-Apr-2022',111, 100);
 2.create view no_salespeople as select city,count (distinct snum) as snum from salespeople group by city;
 3. create view no_orders as select sname,avg(amt) as average,sum(amt) as total from salespeople,orders where salespeople.snum = orders.snum group by sname;
 4. CREATE VIEW mcustomer AS SELECT * FROM salespeople a WHERE 1 <(SELECT COUNT(*) FROM customer b WHERE a.snum = b.snum);
-5.
-6.
+5.create view salespeople_customer_orders as select s.sname,c.cname,o.onum from salespeople s,customer c,orders o where o.snum=s.snum AND o.cnum=c.cnum AND c.snum=s.snum;
+6.create view salespeople_view as select snum,comm from salespeople;
+  update salespeople_view set comm=5000 where comm between 1000 AND 2000;
 
 
 
