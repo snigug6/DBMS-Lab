@@ -1,0 +1,44 @@
+create table salespeople(snum number(10)primary key,sname varchar2(20),city varchar2(20),comm number(20));
+
+create table customer(cnum number(10) primary key,cname varchar2(20),city varchar(20),rating number(10),snum number(10) references salespeople(snum));
+
+create table orders(onum number(10),amt number(20),odate date,cnum number(10) references customer(cnum),snum number(10)references salespeople(snum));
+
+insert into salespeople values(10,'Snigdharup Guchait','Krishnagar',3000);
+insert into salespeople values(20,'Ishita Ghosh','Bandel',5000);
+insert into salespeople values(30,'Subhaiu Das','Kolkata',2000);
+insert into salespeople values(40,'Aradhita DasGupta','Baranagar',1000);
+insert into salespeople values(50,'Ayan Ghosh','Dankuni',2500);
+insert into salespeople values(60,'Abhinaba De','Tollygunge',1500);
+insert into salespeople values(70,'Soumyadeep Dutta','Kolkata',1300);
+insert into salespeople values(80,'Nilesh Bera','Kolkata',1200);
+insert into salespeople values(90,'Ayan Biswas','Kalyani',1250);
+insert into salespeople values(100,'Aradhita Ghosh','Ranaghat',3400);
+
+INSERT INTO CUSTOMER VALUES(11,'Aron Finch','Kolkata',6,10);
+INSERT INTO CUSTOMER VALUES(22,'David Warner','Kolkata',6,20);
+INSERT INTO CUSTOMER VALUES(33,'Smith Jones','Chennai',6,30);
+INSERT INTO CUSTOMER VALUES(44,'Bruder Border','Bangalore',6,40);
+INSERT INTO CUSTOMER VALUES(55,'Kellner Brown','Kolkata',6,50);
+INSERT INTO CUSTOMER VALUES(66,'Meghan Haynes','Delhi',6,60);
+INSERT INTO CUSTOMER VALUES(77,'Ammy Ellen Jones','Mumbai',6,70);
+INSERT INTO CUSTOMER VALUES(88,'Micheal Vaghuan','Mumbai',6,80);
+INSERT INTO CUSTOMER VALUES(99,'Adams Smith','Kolkata',6,90);
+INSERT INTO CUSTOMER VALUES(111,'Steven Smith','Lahore',6,100);
+
+insert into ORDERS values(901,1200,'17-Dec-2021',11 ,  10);
+insert into ORDERS values(902,9802,'31-Dec-2021',22 ,  20);
+insert into ORDERS values(903,1008,'27-Jan-2022',33 ,  30);
+insert into ORDERS values(904,5698,'27-Jan-2022',44 ,  40);
+insert into ORDERS values(905,3456,'6-Feb-2022' ,55 ,  50);
+insert into ORDERS values(906,9230,'22-Feb-2022',66 ,  60);
+insert into ORDERS values(907,564 ,'28-Feb-2022',77 ,  70);
+insert into ORDERS values(908,10  ,'13-Mar-2022',88 ,  80);
+insert into ORDERS values(909,1680,'17-Mar-2022',99 ,  90);
+insert into ORDERS values(910,121 ,'23-Apr-2022',111, 100);
+
+
+
+
+
+
