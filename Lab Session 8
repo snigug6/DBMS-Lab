@@ -38,7 +38,8 @@ insert into ORDERS values(909,1680,'17-Mar-2022',99 ,  90);
 insert into ORDERS values(910,121 ,'23-Apr-2022',111, 100);
 
 1.create view highest_rating as select cname,rating from customer where rating=(select max(rating) from customer);
-2.
+2.create view no_salespeople as select city,count (distinct snum) as snum from salespeople group by city;
+3.
 
 
 
