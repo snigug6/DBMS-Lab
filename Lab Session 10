@@ -1,1 +1,6 @@
 create table Employee1(Eid number primary key,Ename varchar2(100),City varchar2(30),Designation varchar2(30),Salary number,Perks varchar2(30));
+
+insert into Employee1 values(101,'Ishita Ghosh','Bandel','Salesperson',3500,'Food');
+insert into Employee1 values(102,'Snigdharup Guchait','Krishnagar','Manager',5000,'Transport');
+insert into Employee1 values(103,'Ayan Das','Dankuni','Salesperson',1500,'Food');
+
