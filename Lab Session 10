@@ -1,0 +1,1 @@
+create table Employee1(Eid number primary key,Ename varchar2(100),City varchar2(30),Designation varchar2(30),Salary number,Perks varchar2(30));
